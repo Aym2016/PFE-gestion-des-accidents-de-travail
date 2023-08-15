@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+	<managed-bean>
+		<managed-bean-name>bordereauEnvoiBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.BordereauEnvoiBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+		<managed-bean>
+		<managed-bean-name>dossierAccidentBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.DossierAccidentBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>employeBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.EmployeBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>historiqueBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.HistoriqueBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>mandatBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.MandatBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>remboursementBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.RemboursementBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>statistiqueBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.StatistiqueBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>updateHistoriqueBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.UpdateHistoriqueBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>utilisateurBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.UtilisateurBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pieceBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.PieceBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>lesionBean</managed-bean-name>
+		<managed-bean-class>com.gmc.GestionAccidentTravail.presentation.LesionBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	
+	
+</faces-config>

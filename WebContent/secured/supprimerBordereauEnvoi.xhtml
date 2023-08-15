@@ -1,0 +1,143 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{bordereauEnvoiBean.allBordereauEnvoi}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Suppprimer ou Modifier Un Bordereau</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Supprimer ou Modifier Un Bordereau </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+                                   <p:dataTable  id="basicDT" var="be" value="#{bordereauEnvoiBean.bordereauEnvoiList}">
+        <f:facet name="header">
+          BordereauEnvoi
+        </f:facet>
+        <p:column headerText="RefBord">
+            <h:outputText value="#{be.refBord}" />
+        </p:column>
+        <p:column headerText="PeriodeBord">
+            <h:outputText value="#{be.periodeBord}" />
+        </p:column>
+        <p:column headerText="TypeBord">
+            <h:outputText value="#{be.typeBord}" />
+        </p:column>
+        <p:column headerText="DestinationBord">
+            <h:outputText value="#{be.destinationBord}" />
+        </p:column>
+        <p:column headerText="DateEnvoi">
+            <h:outputText value="#{be.dateEnvoi}" />
+        </p:column>
+                       
+          <p:column >
+                <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="supprimer" styleClass="btn btn-info" action="#{bordereauEnvoiBean.supprimer(be.refBord)}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                       
+                
+            
+            </p:column>
+         <p:column >
+           
+                                        <p:commandButton value="Modifier" actionListener="#{bordereauEnvoiBean.modifselect(be.refBord)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+        </p:column>
+    </p:dataTable>
+                                   
+                                   
+                                   
+                                   
+                                   <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty bordereauEnvoiBean.borModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="RefBord:" />
+                <h:outputText value="#{bordereauEnvoiBean.borModif.refBord}" />
+                <h:outputText value="dateEnvoi" />
+                <p:calendar id="inline" value="#{bordereauEnvoiBean.borModif.dateEnvoi}" ></p:calendar>
+				<h:outputText value="periodeBord" />
+                <p:calendar id="inline1" value="#{bordereauEnvoiBean.borModif.periodeBord}" ></p:calendar>
+                 <h:outputText value="TypeBord" />
+                <h:inputText value="#{bordereauEnvoiBean.borModif.typeBord}"></h:inputText>
+				<h:outputText value="DestinationBord" />
+                <h:inputText value="#{bordereauEnvoiBean.borModif.destinationBord}"></h:inputText>
+				
+				
+				
+				<p:commandButton value="enregistrer" actionListener="#{bordereauEnvoiBean.enregistrermodif}" update="@form"></p:commandButton>
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+                                   
+                                   
+                                   </h:form>
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+    
+                                   
+                                   
+                                   
+                                    
+                                    
+                                    
+                                      
+                

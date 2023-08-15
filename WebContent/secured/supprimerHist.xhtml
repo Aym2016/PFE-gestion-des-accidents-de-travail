@@ -1,0 +1,119 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{historiqueBean.allHistorique}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Supprimer ou Modifier Un Historique</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">Tuni_sair</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Supprimer ou Modifier Un Historique</li>
+                            </ol>
+                        </div>
+                    </div>
+                     <h:form id="form">
+                       <p:dialog header="Historique" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2"  columnClasses="label,value" id="ll">
+               
+ 
+                <h:outputText value="Id:" />
+                <h:outputText value="#{updateHistoriqueBean.historiquemodif1.id}" />
+ 
+                <h:outputText value="Date " />
+                <p:calendar id="inline" value="#{updateHistoriqueBean.historiquemodif1.date}" ></p:calendar>
+                 <h:outputText value="Observation" />
+                <p:inputText id="k" value="#{updateHistoriqueBean.historiquemodif1.observation}"></p:inputText>
+				
+				<p:commandButton value="enregistrer" actionListener="#{updateHistoriqueBean.enregmodif}" update="@form"></p:commandButton>
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+                     
+                     
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                  
+                                   <p:dataTable id="basicDT" var="hist" value="#{historiqueBean.historiqueList}">
+        <f:facet name="header">
+            Historique
+        </f:facet>
+        <p:column headerText="Id">
+            <h:outputText value="#{hist.id}" />
+        </p:column>
+        <p:column headerText="Date">
+            <h:outputText value="#{hist.date}" />
+        </p:column>
+        <p:column headerText="Observation">
+            <h:outputText value="#{hist.observation}" />
+        </p:column>
+        
+        <p:column >
+            <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="supprimer" styleClass="btn btn-info" action="#{historiqueBean.supprimer(hist.id)}"></h:commandButton>
+                                                </div>
+                                            </div>
+         </div>
+        </p:column>
+           <p:column >
+             <p:commandButton value="Modifier " update=":form:carDetail :form:ll" icon="ui-icon-search" title="modifier">
+            <p:ajax event="click" listener="#{updateHistoriqueBean.modifselect(hist.id)}"  oncomplete="PF('carDialog').show()"  update=":form:carDetail :form:ll :form:k"></p:ajax>
+            </p:commandButton>
+        </p:column>
+    </p:dataTable>
+                                   
+                                   
+                                   
+                                   
+                                  
+                                   
+                                   
+                                  
+                                    
+                                              
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+ </h:form>
+
+</ui:define>
+</ui:composition>
+    
+   

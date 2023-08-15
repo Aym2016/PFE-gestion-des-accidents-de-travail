@@ -1,0 +1,166 @@
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata> 
+  <f:event listener="#{employeBean.chercher(employeBean.inputname)}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Chercher ou Consulter Un Employe</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Chercher ou Consulter Un Employe</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+		<div class="form-group">
+                                                <label class="control-label col-md-3">MatriculeEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.inputname}"></h:inputText>
+                                            </div>
+                                            </div>  
+				 <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton value="chercherDesEmployes" actionListener="#{employeBean.chercher(employeBean.inputname)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton value="ConsulterUnEmploye" actionListener="#{employeBean.modifier(employeBean.inputname)}" update=":form:carDetail1" oncomplete="PF('carDialog1').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+		
+		 <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+		<p:dataTable  id="basicDT" var="emp" value="#{employeBean.employeList}">
+        <f:facet name="header">
+          Employe
+        </f:facet>
+        <p:column headerText="MatriculeEmp">
+            <h:outputText value="#{emp.matriculeEmp}" />
+        </p:column>
+        <p:column headerText="NomEmp">
+            <h:outputText value="#{emp.nomEmp }" />
+        </p:column>
+        <p:column headerText="PrenomEmp">
+            <h:outputText value="#{emp.prenomEmp}" />
+        </p:column>
+        <p:column headerText="DateNaissEmp">
+            <h:outputText value="#{emp.dateNaissEmp}" />
+        </p:column>
+        <p:column headerText="ProfessionEmp">
+            <h:outputText value="#{emp.professionEmp}" />
+        </p:column>
+        <p:column headerText="NatureActEmp">
+            <h:outputText value="#{emp.natureActEmp}" />
+        </p:column>
+         <p:column headerText="DateRecrutEmp">
+            <h:outputText value="#{emp.dateRecrutEmp}" />
+        </p:column>
+         <p:column headerText="SexeEmp">
+            <h:outputText value="#{emp.sexeEmp}" />
+        </p:column>
+         <p:column headerText="SituationFamiEmp">
+            <h:outputText value="#{emp.situationFamiEmp}" />
+        </p:column>
+                       
+         </p:dataTable>
+         </p:outputPanel>
+         </p:dialog>
+	        <p:dialog header="Utilisateur" widgetVar="carDialog1" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail1" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty employeBean.employeModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="matriculeEmp" />
+                <h:outputText value="#{employeBean.employeModif.matriculeEmp}" />
+                <h:outputText value="nom" />
+                <h:outputText value="#{employeBean.employeModif.nomEmp}"></h:outputText>
+                <h:outputText value="prenom" />
+                <h:outputText value="#{employeBean.employeModif.prenomEmp}"></h:outputText>
+                <h:outputText value="sexeEmp" />
+                <h:outputText value="#{employeBean.employeModif.sexeEmp}"></h:outputText>
+                <h:outputText value="DateNaissance" />
+                <h:outputText value="#{employeBean.employeModif.dateNaissEmp}" ></h:outputText>
+                <h:outputText value="dateRecrutEmp" />
+                <h:outputText  value="#{employeBean.employeModif.dateRecrutEmp}" ></h:outputText>
+				<h:outputText value="professionEmp" />
+                <h:outputText value="#{employeBean.employeModif.professionEmp}"></h:outputText>
+                <h:outputText value="lieu Naissance" />
+                <h:outputText value="#{employeBean.employeModif.lieuNaissEmp}"></h:outputText>
+                <h:outputText value="natureActivite" />
+                <h:outputText value="#{employeBean.employeModif.natureActEmp}"></h:outputText>
+                <h:outputText value="situation Fami" />
+                <h:outputText value="#{employeBean.employeModif.situationFamiEmp}"></h:outputText>
+                
+                
+				
+				
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+	</h:form>
+	        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+
+

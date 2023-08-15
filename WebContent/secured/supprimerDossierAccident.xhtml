@@ -1,0 +1,148 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{dossierAccidentBean.allDossierAccident}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Supprimer ou Consulter Un DossierAccident</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Supprimer ou Consulter Un DossierAccident</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+                                   <p:dataTable  id="basicDT" var="da" value="#{dossierAccidentBean.dossierAccidentList}">
+        <f:facet name="header">
+          DossierAccident
+        </f:facet>
+        <p:column headerText="IdAcc">
+            <h:outputText value="#{da.idAcc}" />
+        </p:column>
+        <p:column headerText="DateSaisie">
+        <h:outputText value="#{da.dateSaisie}" />
+        </p:column>
+        <p:column headerText="DateAcc">
+            <h:outputText value="#{da.dateAcc }" />
+        </p:column>
+        <p:column headerText="NbrJourRepos">
+            <h:outputText value="#{da.nbrJourRepos}" />
+        </p:column>
+        
+        <p:column headerText="DateReprise">
+            <h:outputText value="#{da.dateReprise}" />
+        </p:column>
+        <p:column headerText="TypeA">
+            <h:outputText value="#{da.typeA}" />
+        </p:column>
+         <p:column headerText="CauseA">
+            <h:outputText value="#{da.causeA}" />
+        </p:column>
+        <p:column headerText="EtatA">
+            <h:outputText value="#{da.etat}" />
+        </p:column>
+        
+        
+        
+        <p:column >
+             <p:commandButton value="Supprimer" update="@form" actionListener="#{dossierAccidentBean.supprimerDossierAccident(da.idAcc)}" icon="ui-icon-search" title="supprimer">
+                
+            </p:commandButton>
+            </p:column>
+         <p:column >
+             <p:commandButton value="Modifier" actionListener="#{dossierAccidentBean.modifselect(da.idAcc)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+        </p:column>
+         
+    </p:dataTable>
+                                   
+                                   
+                                   
+                                   
+                                   <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty dossierAccidentBean.dossierAccidentModif}" columnClasses="label,value">
+            
+             <h:outputText value="IdAcc:" />
+                <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.idAcc}" />
+                <h:outputText value="dateSaisie" />
+				<p:calendar id="inline" value="#{dossierAccidentBean.dossierAccidentModif.dateSaisie}" ></p:calendar>
+                <h:outputText value="dateAccident" />
+				<p:calendar id="inline1" value="#{dossierAccidentBean.dossierAccidentModif.dateAcc}" ></p:calendar>         
+				<h:outputText value="NbreJourRepos " />
+                 <h:inputText value="#{dossierAccidentBean.dossierAccidentModif.nbrJourRepos}"></h:inputText>
+				<h:outputText value="dateSaisie" />
+				<p:calendar id="inline2" value="#{dossierAccidentBean.dossierAccidentModif.dateReprise}" ></p:calendar>
+				<h:outputText value="TypeA" />                
+                <h:inputText value="#{dossierAccidentBean.dossierAccidentModif.typeA}"></h:inputText>
+                <h:outputText value="CauseA" />
+                <h:inputText value="#{dossierAccidentBean.dossierAccidentModif.causeA}"></h:inputText>
+                <h:outputText value="EtatA" />
+                <h:inputText value="#{dossierAccidentBean.dossierAccidentModif.etat}"></h:inputText>
+				
+				
+				
+				
+				
+				<p:commandButton value="enregistrer" actionListener="#{dossierAccidentBean.enregistrermodif}" update="@form"></p:commandButton>
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+       
+                                   
+                                   
+                                   </h:form>
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+        

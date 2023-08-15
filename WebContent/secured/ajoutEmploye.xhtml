@@ -1,0 +1,190 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Ajouter Un Employe</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.html">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Ajouter Un Employe</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal">
+                                    
+                                    
+                                      <div class="form-body">
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">MatriculeEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.matriculeEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                        	
+                                            
+                                           <!--  <div class="form-group">
+                                                <label class="control-label col-md-3">Date 
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar id="inline" value="#{historiqueBean.historique.date}" />
+                                            </div>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">NomEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.nomEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">PrenomEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.prenomEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                           <div class="form-group">
+                                                <label class="control-label col-md-3">DateNaissEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar  value="#{employeBean.employe.dateNaissEmp}" />
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">ProfessionEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.professionEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">LieuNaissEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.lieuNaissEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                           
+                                           <div class="form-group">
+                                                <label class="control-label col-md-3">NatureActEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.natureActEmp}"></h:inputText>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">SexeEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.sexeEmp}"></h:inputText>
+                                                
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">SexeEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{employeBean.employe.situationFamiEmp}"></h:inputText>
+                                               </div> 
+                                            </div>
+                                            </div>
+										
+                                          <div class="form-group">
+                                                <label class="control-label col-md-3">DateRecrutEmp 
+                                                    <span class="required"> * </span>
+                                                </label>
+                                               <div class="col-md-5">
+                                               <p:calendar  value="#{employeBean.employe.dateRecrutEmp}" /> 
+                                                 
+                                                 
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Id Accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <h:selectOneMenu  styleClass="form-control input-height" value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateSaisie}"
+                                                 itemLabel="#{dossierAccident.dateSaisie}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div>
+
+                                        
+                                        
+                                        
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="ajouter" styleClass="btn btn-info" action="#{historiqueBean.ajouter}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    </h:form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>

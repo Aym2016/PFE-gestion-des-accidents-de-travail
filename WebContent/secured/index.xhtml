@@ -1,0 +1,315 @@
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+           
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">MENU</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">MENU</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row" style="background-image: url('resources\\img\\hqdefault.jpg');">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow" >
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal"  >
+                                    
+                                     <p:column >
+             <p:commandButton     style="background-image: url('resources\\img\\accid.jpg'); width: 150px;height: 150px;color: black;border-color: black;font-size: 15px; "   value="Accident" oncomplete="PF('carDialog').show()" />
+
+
+
+        </p:column>
+                  <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail1" style="text-align:center;"> <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"><i class="fa fa-book"></i> 
+	                            <span class="title">Accident</span><span class="arrow"></span></a>
+	                             <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="AjoutDossierAcciden.xhtml" class="nav-link "> <span class="title">Ajouter un Dossier d'Accident</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerDossierAccident.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Dossier d'Accident</span>
+	                                    </a>
+	                                </li>
+	                                
+	                                
+	                                 <li class="nav-item  ">
+	                                    <a href="chercherDossierAccident.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Accident</span>
+	                                    </a>
+	                                </li>
+                                    <li class="nav-item  ">
+	                                    <a href="statistique.xhtml" class="nav-link "> <span class="title">Statistiques des Accidents par Mois</span>
+	                                    </a>
+	                                </li>
+	                                 <li class="nav-item  ">
+	                                    <a href="ParametrerSysteme1.xhtml" class="nav-link "> <span class="title">Parametrage Systeme</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </li>                 
+                               </p:outputPanel>
+    </p:dialog>      
+                                    
+                                     <p:column>
+                                                <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Bordereau" oncomplete="PF('carDialo').show()" />
+
+
+                                               
+
+  
+        </p:column>
+        
+        <p:dialog header="Utilisateur" widgetVar="carDialo" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+          <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-user-md"></i>
+	                                <span class="title">Bordereau</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutBordereauEnvoi.xhtml" class="nav-link "> <span class="title">Ajouter un Bordereau</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerBordereauEnvoi.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Bordereau</span>
+	                                    </a>
+	                                </li>
+	                                
+	                               
+	                                <li class="nav-item  ">
+	                                    <a href="chercherBordereau.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Bordereau</span>
+	                                    </a>
+	                                </li>
+
+	                            </ul>
+	                        </li>
+            
+        </p:outputPanel>
+    </p:dialog>
+            
+                                  <p:column>
+                                                <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Mandat" oncomplete="PF('carDialoog').show()" />
+
+
+                                               
+
+  
+        </p:column>
+        <p:dialog header="Utilisateur" widgetVar="carDialoog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail2" style="text-align:center;">
+          <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-users"></i>
+	                                <span class="title">Mandat</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutMandat.xhtml" class="nav-link "> <span class="title">Ajouter Un Mandat</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerMandat.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Mandat </span>
+	                                    </a>
+	                                </li>
+	                                	                                <li class="nav-item  ">
+	                                    <a href="chercherMandat.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Mandat</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </li>
+        </p:outputPanel> 
+    </p:dialog>                          <p:column>
+                                                <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Utilisateur" oncomplete="PF('carDialogg').show()" />
+
+
+                                               
+
+  
+        </p:column>
+        
+        <p:dialog header="Utilisateur" widgetVar="carDialogg" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail3" style="text-align:center;">
+          <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-user"></i>
+	                                <span class="title">Utilisateur</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutUtilisateur.xhtml" class="nav-link "> <span class="title">Ajouter Un Utilisateur</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerCompteUtilisateur.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Utilisateur</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="chercherUtilisateur.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Utilisateur</span>
+	                                    </a>
+	                                </li>
+	                                
+	                            </ul>
+	                        </li>
+        </p:outputPanel>
+    </p:dialog>
+                                   
+                                  <!--    <p:column >
+          <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Remboursement" oncomplete="PF('carDialog11').show()" />
+
+
+        </p:column>
+        
+                  <p:dialog header="Utilisateur" widgetVar="carDialog11" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail11" style="text-align:center;"> 
+	                               <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-users"></i>
+	                                <span class="title">Remboursement</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutRemboursement.xhtml" class="nav-link "> <span class="title">Ajouter Un Remboursement</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerRemboursement.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'une Remboursement </span>
+	                                    </a>
+	                                </li>
+	                                
+	                                 <li class="nav-item  ">
+	                                    <a href="chercherRemboursement.xhtml" class="nav-link "> <span class="title">Consulter et chercher Un Remboursement</span>
+	                                    </a>
+	                                </li>
+
+	                            </ul>
+	                        </li>
+                               </p:outputPanel>
+    </p:dialog>      
+                                    
+                                     <p:column>
+                                                <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Employe" oncomplete="PF('carDialo22').show()" />
+
+
+                                               
+
+  
+        </p:column>
+        
+        <p:dialog header="Utilisateur" widgetVar="carDialo22" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail22" style="text-align:center;">
+           <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-user"></i>
+	                                <span class="title">Employe</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutEmploye.xhtml" class="nav-link "> <span class="title">Ajouter Un Employe</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerEmploye1.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Employe</span>
+	                                    </a>
+	                                </li>
+	                                
+	                                <li class="nav-item  ">
+	                                    <a href="chercherEmploye.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Employe</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </li>
+        </p:outputPanel>
+    </p:dialog>
+            
+                                  <p:column>
+                                                <p:commandButton    style="background-image: url('resources\\img\\hqdefault.jpg');width: 150px;height: 150px;color: white;border-color: white;font-size: 15px; "  value="Historique" oncomplete="PF('carDialoog33').show()" />
+
+
+                                               
+
+  
+        </p:column>
+        <p:dialog header="Utilisateur" widgetVar="carDialoog33" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail33" style="text-align:center;">
+          <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle"> <i class="fa fa-user"></i>
+	                                <span class="title">Historique</span> <span class="arrow"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item  ">
+	                                    <a href="ajoutHistorique.xhtml" class="nav-link "> <span class="title">Ajouter Un Historique</span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item  ">
+	                                    <a href="supprimerHist.xhtml" class="nav-link "> <span class="title">Suppression et Modification d'un Historique</span>
+	                                    </a>
+	                                </li>
+	                                
+	                                <li class="nav-item  ">
+	                                    <a href="chercherHis.xhtml" class="nav-link "> <span class="title">Chercher et Consulter Un Historique</span>
+	                                    </a>
+	                                </li>
+	                         
+	                              <li class="nav-item  ">
+	                                    <a href="ParametrerSysteme1.xhtml" class="nav-link "> <span class="title">Parametrage Systeme</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                     </li>
+	                            
+	                        
+	                        
+        </p:outputPanel> 
+    </p:dialog>   -->                     
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                    
+                                    </h:form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>

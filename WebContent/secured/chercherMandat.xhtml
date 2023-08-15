@@ -1,0 +1,141 @@
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata> 
+  <f:event listener="#{mandatBean.chercher(mandatBean.inputname)}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Chercher ou Consulter Un Mandat</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Chercher ou Consulter Un Mandat</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+		<div class="form-group">
+                                              <label class="control-label col-md-3">IdMandat
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{mandatBean.inputname}"></h:inputText>
+                                            </div>
+                                            </div>
+			<p:column>	 <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                         <div class="col-md-5">
+                                                 <p:commandButton  value="chercherDesMandats" actionListener="#{mandatBean.chercher(mandatBean.inputname)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton></div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </p:column>
+                                    <p:column>   <div class="form-actions">
+                                       <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                         <div class="col-md-5">
+                                                 <p:commandButton  value="ConsulterUnMandat" actionListener="#{mandatBean.modifier(mandatBean.inputname)}" update=":form:carDetail1" oncomplete="PF('carDialog1').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </p:column>
+                                        
+		
+		 <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+		<p:dataTable  id="basicDT" var="mand" value="#{mandatBean.mandatList}">
+        <f:facet name="header">
+            Mandat
+        </f:facet>
+        <p:column headerText="Id">
+            <h:outputText value="#{mand.idMand}" />
+        </p:column>
+        <p:column headerText="DateReception">
+            <h:outputText value="#{mand.dateRecept }" />
+        </p:column>
+        <p:column headerText="DateEcheance">
+            <h:outputText value="#{mand.dateEcheance}" />
+        </p:column>
+        <p:column headerText="Montant">
+            <h:outputText value="#{mand.montant}" />
+        </p:column>
+        
+                       
+         </p:dataTable>
+         </p:outputPanel>
+         </p:dialog>
+          <p:dialog header="Utilisateur" widgetVar="carDialog1" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail1" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty mandatBean.mandatModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="IdMandat" />
+                <h:outputText value="#{mandatBean.mandatModif.idMand}" />
+                 <h:outputText value="DateRecept" />
+                 <h:outputText value="#{mandatBean.mandatModif.dateRecept}" ></h:outputText>
+                 <h:outputText value="DateEcheance" />
+                <h:outputText  value="#{mandatBean.mandatModif.dateEcheance}" ></h:outputText>
+				<h:outputText value="Montant" />
+                <h:outputText value="#{mandatBean.mandatModif.montant}"></h:outputText>
+                
+				
+				
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+	</h:form>
+	        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+
+

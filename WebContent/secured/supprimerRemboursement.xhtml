@@ -1,0 +1,130 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{remboursementBean.allRemboursement}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Supprimer ou Modifier Un Remboursement</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Supprimer ou Modifier Un Remboursement</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+                                   <p:dataTable  id="basicDT" var="rem" value="#{remboursementBean.remboursementList}">
+        <f:facet name="header">
+            Mandat
+        </f:facet>
+        <p:column headerText="Id">
+            <h:outputText value="#{rem.idRemboursement}" />
+        </p:column>
+        <p:column headerText="DateRemboursement">
+            <h:outputText value="#{rem.dateRemboursement }" />
+        </p:column>
+        <p:column headerText="TypeRemboursement">
+            <h:outputText value="#{rem.typeRemboursement}" />
+        </p:column>
+        <p:column headerText="Montant">
+            <h:outputText value="#{rem.montant}" />
+        </p:column>
+        
+        <p:column >
+           <p:commandButton value="Supprimer" update="@form" actionListener="#{remboursementBean.supprimer(rem.idRemboursement)}" icon="ui-icon-search" title="supprimer">
+                
+            </p:commandButton>
+             
+           
+            </p:column>
+             <p:column >
+              <p:commandButton value="Modifier" actionListener="#{remboursementBean.modifselect(rem.idRemboursement)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+        </p:column>
+            </p:dataTable>
+                                   
+                                   
+                                   
+                                   
+                                  <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty remboursementBean.remboursementModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="IdRemboursement" />
+                <h:outputText value="#{remboursemntBean.remboursementModif.idRemboursement}" />
+                 <h:outputText value="DateRecept" />
+                 <p:calendar id="inline" value="#{remboursementBean.remboursementModif.dateRemboursement}" ></p:calendar>
+                 <h:outputText value="TypeRemboursement" />
+                <h:inputText value="#{remboursementBean.remboursementModif.typeRemboursement}" ></h:inputText>
+				<h:outputText value="Montant" />
+                <h:inputText value="#{remboursementBean.remboursementModif.montant}"></h:inputText>
+                
+				
+				
+               <p:commandButton value="enregistrer" actionListener="#{remboursementBean.enregistrermodif}" update="@form"></p:commandButton>
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+                                   
+                                   
+                                   </h:form>
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+    
+                                   
+                                   
+                                   
+                                    
+                                    
+                                    
+                                      

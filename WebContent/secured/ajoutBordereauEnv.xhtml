@@ -1,0 +1,126 @@
+
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+	    
+                                                
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Ajouter BordereauEnvoi</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Home</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Ajouter BordereauEnvoi</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div><div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal"> 
+                      <div class="form-body">
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">RefBord
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{bordereauEnvoiBean.bordereauEnvoi.refBord}"></h:inputText>
+                                            </div>
+                                            </div>  
+                                             
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">TypeBord
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{bordereauEnvoiBean.bordereauEnvoi.typeBord}"></h:inputText>
+                                               
+                                            </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="control-label col-md-3">DestinationBord
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <h:inputText styleClass="form-control input-height" value="#{bordereauEnvoiBean.bordereauEnvoi.destinationBord}"></h:inputText>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">PeriodeBord
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                               
+                                                <p:calendar id="inline" value="#{bordereauEnvoiBean.bordereauEnvoi.periodeBord}" />
+                                            </div>
+                                            </div>
+                                            <!--    <div class="form-group">
+                                                <label class="control-label col-md-3">DateEnvoi
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar id="inline" value="#{bordereauEnvoiBean.bordereauEnvoi.dateEnvoi}" />
+                                            </div>
+                                            </div>-->
+                                   
+                                        	
+                                        	
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">DateEnvoi
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar id="inline1" value="#{bordereauEnvoiBean.bordereauEnvoi.dateEnvoi}" />
+                                            </div>
+                                            </div>
+                                            
+                                              
+                                    
+                                    </div>
+                                    <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="ajouter" styleClass="btn btn-info" action="#{bordereauEnvoiBean.ajouter}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </h:form>
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>

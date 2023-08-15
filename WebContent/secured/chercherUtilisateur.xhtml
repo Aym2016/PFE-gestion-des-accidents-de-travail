@@ -1,0 +1,144 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata> 
+  <f:event listener="#{utilisateurBean.chercher(utilisateurBean.inputname)}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Chercher ou Consulter Un Utilisateur</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.html">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Chercher ou Consulter Un Utilisateur</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+		<div class="form-group">
+                                                <label class="control-label col-md-3">MatriculeEmp
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{utilisateurBean.inputname}"></h:inputText>
+                                            </div>
+                                            </div>  
+				 <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton value="chercherDesUtilisateurs" actionListener="#{utilisateurBean.chercher(utilisateurBean.inputname)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton value="ConsulterUnUtilisateurs" actionListener="#{utilisateurBean.modifier(utilisateurBean.inputname)}" update=":form:carDetail1" oncomplete="PF('carDialog1').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+		
+		 <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+		<p:dataTable  id="basicDT" var="cu" value="#{utilisateurBean.utilisateurList}">
+        <f:facet name="header">
+          Compte Utilisateur
+        </f:facet>
+        <p:column headerText="Login">
+            <h:outputText value="#{cu.identifiant}" />
+        </p:column>
+        <p:column headerText="Passwd">
+            <h:outputText value="#{cu.passwd }" />
+        </p:column>
+        <p:column headerText="Profil">
+            <h:outputText value="#{cu.profil}" />
+        </p:column>
+        <p:column headerText="Mail">
+            <h:outputText value="#{cu.mail}" />
+        </p:column>
+        <p:column headerText="dateCreation">
+            <h:outputText value="#{cu.dateCreation}" />
+        </p:column>      
+               
+        
+        
+    </p:dataTable>
+         </p:outputPanel>
+         </p:dialog>
+         <p:dialog header="Utilisateur" widgetVar="carDialog1" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail1" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty utilisateurBean.utilisateurmodif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="identifiant" />
+                <h:outputText value="#{utilisateurBean.utilisateurmodif.identifiant}" />
+                 <h:outputText value="mail" />
+                 <h:outputText value="#{utilisateurBean.utilisateurmodif.mail}" ></h:outputText>
+                 <h:outputText value="password" />
+                <h:outputText  value="#{utilisateurBean.utilisateurmodif.passwd}" ></h:outputText>
+				<h:outputText value="profil" />
+                <h:outputText value="#{utilisateurBean.utilisateurmodif.profil}"></h:outputText>
+                <h:outputText value="date creation" />
+                <h:outputText value="#{utilisateurBean.utilisateurmodif.dateCreation}"></h:outputText>
+                
+                
+                
+				
+				
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+	</h:form>
+	        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+
+

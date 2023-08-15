@@ -1,0 +1,221 @@
+<!-- <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Room Allotment</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.html">Home</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">Monitor Hospital</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Room Allotment</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal">
+                                    
+                                    
+                                      <div class="form-body">
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">id
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{historiqueBean.historique.id}"></h:inputText>
+                                            </div>
+                                            </div>
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">Date 
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar id="inline" value="#{historiqueBean.historique.date}" />
+                                            </div>
+                                            </div>
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">Observation
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{historiqueBean.historique.observation}"></h:inputText>
+                                            </div>
+                                            </div>
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">employeH
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{historiqueBean.historique.employeH}"></h:inputText>
+                                            </div>
+                                            </div>
+                                            
+                                            
+                                           
+                                            
+                                           
+										</div>
+                                    
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="ajouter" styleClass="btn btn-info" action="#{historiqueBean.ajouter}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    </h:form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>-->
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title"></div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Ajouter Historique</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal">
+                                    
+                                    
+                                      <div class="form-body">
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">id
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{historiqueBean.historique.id}"></h:inputText>
+                                            </div>
+                                            </div>
+                                        	
+                                            
+                                           <!--  <div class="form-group">
+                                                <label class="control-label col-md-3">Date 
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <p:calendar id="inline" value="#{historiqueBean.historique.date}" />
+                                            </div>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">date
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <p:calendar id="inline" value="#{historiqueBean.historique.date}" />
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Observation
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{historiqueBean.historique.observation}"></h:inputText>
+                                            </div>
+                                            </div>
+                                         </div>  
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="ajouter" styleClass="btn btn-info" action="#{historiqueBean.ajouter}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    </h:form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+

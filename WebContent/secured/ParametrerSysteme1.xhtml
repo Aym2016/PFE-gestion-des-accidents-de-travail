@@ -1,0 +1,361 @@
+ <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Parametrage Systeme</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Parametrer Le Systeme</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                    <h:form class="form-horizontal">
+                                    
+                                    
+                                       <div class="form-body">
+                                        	  <div class="form-group">
+                                                <label class="control-label col-md-3">Reference Lesion
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <h:selectOneListbox styleClass="form-control input-height"  value="#{lesionBean.lesion}">
+                                                 <f:selectItems value="#{lesionBean.lesionList}"
+                                                 var="lesion"
+                                                 itemValue="#lesion.refles"
+                                                 itemLabel="#{lesion.refles}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                  </h:selectOneListbox>
+                                            </div>
+                                            </div>
+                                        	
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">NatureLesion
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                  <h:selectOneListbox styleClass="form-control input-height" value="#{lesionBean.lesion}">
+                                                 <f:selectItems value="#{lesionBean.lesionList}"
+                                                 var="lesion"
+                                                 itemValue="#{lesion.natureL}"
+                                                 itemLabel="#{lesion.natureL}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                        
+                        
+                         
+                                                 </h:selectOneListbox>
+                                            </div>
+                                            </div>
+                                           
+                                            
+                                           <div class="form-group">
+                                                <label class="control-label col-md-3">refPiece
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                 <h:selectOneListbox styleClass="form-control input-height"  value="#{pieceBean.piece}">
+                          <f:selectItems value="#{pieceBean.pieceList}"
+                                                 var="piece"
+                                                 itemValue="#{piece.refPiece}"
+                                                 itemLabel="#{piece.refPiece}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                         
+                         
+                         
+                                                </h:selectOneListbox>
+                                            </div>
+                                            </div>
+                                               <div class="form-group">
+                                                <label class="control-label col-md-3">intitulePiece
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <!--  <h:selectOneListbox styleClass="form-control input-height" value="#{pieceBean.piece}">
+                                                 <f:selectItems value="#{PieceBean.pieceList}"
+                                                 var="piece"
+                                                 itemValue="#{Piece.intitulePiece}"
+                                                 itemLabel="#{Piece.intitulePiece}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                  </h:selectOneListbox>-->
+                                                  <h:selectOneMenu styleClass="form-control input-height"  value="#{pieceBean.piece}">
+                                                 <f:selectItems value="#{pieceBean.pieceList}"
+                                                 var="piece"
+                                                 itemValue="#{piece.intitulePiece}"
+                                                 itemLabel="#{piece.intitulePiece}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                        
+                                            </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="control-label col-md-3">Id Accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <!--   <h:selectOneListbox styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident}"
+                                                 itemLabel="#{dossierAccident}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                  </h:selectOneListbox>-->
+                                                  <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.idAcc}"
+                                                 itemLabel="#{dossierAccident.idAcc}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                            </div>
+                                            </div>
+                                             <div class="form-body">
+                                        	<div class="form-group">
+                                                <label class="control-label col-md-3">date Accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                           <!--      <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident.dateAcc}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateAcc}"
+                                                  itemLabel="#{dossierAccident.dateAcc}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                         
+                                                  </h:selectOneListbox>-->
+                                                  <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateAcc}"
+                                                 itemLabel="#{dossierAccident.dateAcc}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Nombres jours de repos
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                            <!--       <h:selectOneListbox styleClass="form-control input-height"  value="#{dossierAccidentBean.dossierAccident}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.nbrJourRepos}"
+                                                 itemLabel="#{dossierAccident.nbrJourRepos}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                         
+                         </h:selectOneListbox>-->	
+                                          <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.nbrJourRepos}"
+                                                 itemLabel="#{dossierAccident.nbrJourRepos}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div>
+                                           
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">date Saisie Accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <!--    <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateSaisie}" 
+                                                  itemLabel="#{dossierAccident.dateSaisie}"
+                                                  noSelectionValue=""
+                                                 
+                                                  />
+                                                  
+                      </h:selectOneListbox>    <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident}">
+                                                  <f:selectItems value="#{dossierAccident.dossierAccidentList}" var="dossierAccident" 
+                                                  itemValue="#{dossierAccident.dateSaisie}" 
+                                                  itemLabel="#{dossierAccident.dateSaisie}" />
+                                                  </h:selectOneListbox>-->
+                                                  <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateSaisie}"
+                                                 itemLabel="#{dossierAccident.dateSaisie}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">date Reprise d'accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <!--  <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateReprise}"
+                                                 itemLabel="#{dossierAccident.dateReprise}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                  
+                         
+                         
+                         
+                         
+                                             </h:selectOneListbox>-->
+                                             <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.dateReprise}"
+                                                 itemLabel="#{dossierAccident.dateReprise}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">type Accident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                               <!--   <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.typeA}"
+                                                 itemLabel="#{dossierAccident.typeA}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                         
+                         </h:selectOneListbox>-->
+                                                <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.typeA}"
+                                                 itemLabel="#{dossierAccident.typeA}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>
+                                            </div>
+                                            </div></div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">EtatAccident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                              <!--   <h:selectOneListbox styleClass="form-control input-height" value="#{dossierAccidentBean.dossierAccident}">
+                                                 <f:selectItems value="#{dossierAccidentBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.etat}"
+                                                 itemLabel="#{dossierAccident.etat}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                                         
+                                                </h:selectOneListbox>-->
+                                                <h:selectOneMenu styleClass="form-control input-height"  value="#{employeBean.dossierAccident}">
+                                                 <f:selectItems value="#{employeBean.dossierAccidentList}"
+                                                 var="dossierAccident"
+                                                 itemValue="#{dossierAccident.etat}"
+                                                 itemLabel="#{dossierAccident.etat}"
+                                                 noSelectionValue=""
+                                                 
+                                                  />
+                                                 
+                                                 </h:selectOneMenu>  
+                                            </div>
+                                            </div>
+										</div>
+                                    
+                                        
+                                    
+                                    
+                                    </h:form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+ </ui:define>
+</ui:composition>

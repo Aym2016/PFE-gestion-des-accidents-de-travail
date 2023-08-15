@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration
+PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory >
+<!-- local connection properties -->
+<property name="hibernate.enable_lazy_load_no_trans">true</property>
+		
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		
+<property name="hibernate.connection.url">
+jdbc:mysql://localhost:3306/tunisair4</property>
+<property name="hibernate.connection.driver_class">
+com.mysql.jdbc.Driver</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password"></property>
+
+<property name="hibernate.show_sql">true</property>
+<property name="hibernate.hbm2ddl.auto">update</property>
+ 
+<property  name="current_session_context_class">thread</property>
+
+ 
+<!-- Mention here all the model classes along with their package name  -->
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Employe"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.BordereauEnvoi"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.DossierAccident"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Lesion"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Remboursement"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Utilisateur"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Piece"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Mandat"/>
+ <mapping class="com.gmc.GestionAccidentTravail.entity.Historique"/>
+</session-factory>
+</hibernate-configuration>

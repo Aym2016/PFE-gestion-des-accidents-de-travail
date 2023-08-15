@@ -1,0 +1,160 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{employeBean.allEmploye}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Supprimer ou Modifier Un Employe</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Supprimer ou Modifier Un Employe</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+                                   <p:dataTable  id="basicDT" var="emp" value="#{employeBean.employeList}">
+        <f:facet name="header">
+          Employe
+        </f:facet>
+        <p:column headerText="MatriculeEmp">
+            <h:outputText value="#{emp.matriculeEmp}" />
+        </p:column>
+        <p:column headerText="NomEmp">
+            <h:outputText value="#{emp.nomEmp }" />
+        </p:column>
+        <p:column headerText="PrenomEmp">
+            <h:outputText value="#{emp.prenomEmp}" />
+        </p:column>
+        <p:column headerText="DateNaissEmp">
+            <h:outputText value="#{emp.dateNaissEmp}" />
+        </p:column>
+        <p:column headerText="ProfessionEmp">
+            <h:outputText value="#{emp.professionEmp}" />
+        </p:column>
+        <p:column headerText="NatureActEmp">
+            <h:outputText value="#{emp.natureActEmp}" />
+        </p:column>
+         <p:column headerText="DateRecrutEmp">
+            <h:outputText value="#{emp.dateRecrutEmp}" />
+        </p:column>
+        
+        
+        
+        <p:column >
+              <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="supprimer" styleClass="btn btn-info" action="#{employeBean.supprimer(emp.matriculeEmp)}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                              
+            </p:column>
+           
+         <p:column >
+             <p:commandButton value="Modifier" actionListener="#{employeBean.modifier(emp.matriculeEmp)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+              
+            </p:commandButton>
+        </p:column>
+        
+    </p:dataTable>
+  
+                                   
+                                   
+                                   
+                                   
+                                   <p:dialog header="Utilisateur" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty employeBean.employeModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="Id:" />
+                <h:outputText value="#{employeBean.employeModif.matriculeEmp}" /> 
+                <h:outputText value="nomEmp" />
+                <h:inputText value="#{employeBean.employeModif.nomEmp}"></h:inputText>
+                 <h:outputText value="prenomEmp" />
+                <h:inputText value="#{employeBean.employeModif.prenomEmp}"></h:inputText>
+				<h:outputText value="dateNaissance" />
+				<p:calendar id="inline" value="#{employeBean.employeModif.dateNaissEmp}" ></p:calendar>
+				<h:outputText value="professionEmp" />
+                <h:inputText value="#{employeBean.employeModif.professionEmp}"></h:inputText>
+                <h:outputText value="natureActEmp" />
+                <h:inputText value="#{employeBean.employeModif.natureActEmp}"></h:inputText>
+                <h:outputText value="lieuNaissance" />
+                <h:inputText value="#{employeBean.employeModif.lieuNaissEmp}"></h:inputText>
+                <h:outputText value="sexeEmp" />
+                <h:inputText value="#{employeBean.employeModif.sexeEmp}"></h:inputText>
+				<h:outputText value="situationFamiEmp" />
+                <h:inputText value="#{employeBean.employeModif.situationFamiEmp}"></h:inputText>
+                <h:outputText value="dateRecrutement" />
+				<p:calendar id="inline1" value="#{employeBean.employeModif.dateRecrutEmp}" ></p:calendar>
+				
+				
+				<p:commandButton value="enregistrer" actionListener="#{employeBean.enregistrermodif}" update="@form"></p:commandButton>
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+                                   
+                                   
+                                   </h:form>
+                                    
+                                    
+                                    
+                                      
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+    
+                                   
+                                   
+                                   
+                                    
+                                    
+                                    
+                                      
+                

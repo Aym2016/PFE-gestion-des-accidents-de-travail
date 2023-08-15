@@ -1,0 +1,265 @@
+<!-- <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata>
+<f:event listener="#{dossierAccidentBean.allDossierAccident}" type="preRenderView"></f:event>
+
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Room Allotment</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.html">Home</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Room Allotment</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+		<div class="form-group">
+                                                <label class="control-label col-md-3">RefBord
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{chercherBeanB.inputName}"></h:inputText>
+                                            </div>
+                                            </div>  
+				 <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                 <h:commandButton value="chercher" styleClass="btn btn-info" action="#{chercherBeanB.chercher(chercherBean.inputName)}"></h:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+		
+		<p:dataTable  id="basicDT" var="da" value="#{dossierAccidentBean.dossierAccidentList}">
+        <f:facet name="header">
+          DossierAccident
+        </f:facet>
+        <p:column headerText="IdAcc">
+            <h:outputText value="#{da.idAcc}" />
+        </p:column>
+        <p:column headerText="DateAcc">
+            <h:outputText value="#{da.dateAcc }" />
+        </p:column>
+        <p:column headerText="NbrJourRepos">
+            <h:outputText value="#{da.nbrJourRepos}" />
+        </p:column>
+        
+        <p:column headerText="DateReprise">
+            <h:outputText value="#{da.dateReprise}" />
+        </p:column>
+        <p:column headerText="TypeA">
+            <h:outputText value="#{da.typeA}" />
+        </p:column>
+         <p:column headerText="CauseA">
+            <h:outputText value="#{da.causeA}" />
+        </p:column>
+        <p:column headerText="EtatA">
+            <h:outputText value="#{da.etat}" />
+        </p:column>
+          </p:dataTable>
+	</h:form>
+	        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>-->
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="metadata">
+	    <f:metadata> 
+    <f:event listener="#{dossierAccidentBean.chercher(dossierAccidentBean.inputname)}" type="preRenderView"></f:event>
+
+             </f:metadata>
+	</ui:define>
+    
+	<ui:define name="content">
+	
+
+
+
+
+
+
+<div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Chercher ou Consulter Un DossierAccident</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i><a class="parent-item" href="index.xhtml">Accueil</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">TUNISAIR</a><i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Chercher ou Consulter Un Dossier Accident</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-topline-yellow">
+                                <div class="card-head">
+                                    <header></header>
+                                </div>
+                                <div class="card-body" id="bar-parent">
+                                   <h:form id="form">
+		<div class="form-group">
+                                                <label class="control-label col-md-3">IdAccident
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-5">
+                                                <h:inputText styleClass="form-control input-height" value="#{dossierAccidentBean.inputname}"></h:inputText>
+                                            </div>
+                                            </div>  
+				 <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton  value="chercherUnDossierAccident" actionListener="#{dossierAccidentBean.chercher(dossierAccidentBean.inputname)}" update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="modifier">
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                        
+                                                 <p:commandButton  value="ConsulterUnDossierAccident" actionListener="#{dossierAccidentBean.Modifselect(dossierAccidentBean.inputname)}" update=":form:carDetail1" oncomplete="PF('carDialog1').show()" icon="ui-icon-search" title="modifier">
+                                                 
+               
+            </p:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+		
+		 <p:dialog header="DossierAccident" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+		<p:dataTable  id="basicDT" var="da" value="#{dossierAccidentBean.dossierAccidentList}">
+        <f:facet name="header">
+          DossierAccident
+        </f:facet>
+        <p:column headerText="IdAcc">
+            <h:outputText value="#{da.idAcc}" />
+        </p:column>
+        <p:column headerText="DateSaisie">
+        <h:outputText value="#{da.dateSaisie}" />
+        </p:column>
+        <p:column headerText="DateAcc">
+            <h:outputText value="#{da.dateAcc }" />
+        </p:column>
+        <p:column headerText="NbrJourRepos">
+            <h:outputText value="#{da.nbrJourRepos}" />
+        </p:column>
+        
+        <p:column headerText="DateReprise">
+            <h:outputText value="#{da.dateReprise}" />
+        </p:column>
+        <p:column headerText="TypeA">
+            <h:outputText value="#{da.typeA}" />
+        </p:column>
+         <p:column headerText="CauseA">
+            <h:outputText value="#{da.causeA}" />
+        </p:column>
+        <p:column headerText="EtatA">
+            <h:outputText value="#{da.etat}" />
+        </p:column>
+        
+                       
+         </p:dataTable>
+         </p:outputPanel>
+         </p:dialog>
+            
+                                  <p:dialog header="DossierAccident" widgetVar="carDialog1" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail1" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty dossierAccidentBean.dossierAccidentModif}" columnClasses="label,value">
+               
+ 
+                <h:outputText value="IdAcc" />
+                <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.idAcc}" ></h:outputText>
+                 <h:outputText value="DateSaisie" />
+                 <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.dateSaisie}" ></h:outputText>
+                 <h:outputText value="DateAccident" />
+                <h:outputText  value="#{dossierAccidentBean.dossierAccidentModif.dateAcc}" ></h:outputText>
+				<h:outputText value="cause Accident" />
+                <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.causeA}"></h:outputText>
+                <h:outputText value="type Accident" />
+                <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.typeA}"></h:outputText>
+                <h:outputText value="etat Accident" />
+                <h:outputText value="#{dossierAccidentBean.dossierAccidentModif.etat}"></h:outputText>
+                
+                
+				
+				
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+	</h:form>
+	        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>
+
+
