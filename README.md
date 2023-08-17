@@ -23,7 +23,8 @@ Technologies utilisées et Environnement de travail: IDE Eclipse, JSF,Hibernate,
 ![AjoutBor](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/168d6464-050c-427c-9ed0-aa82d6aa48d5)
 ![AjoutMand](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/5eeeab88-759f-493f-8509-3a6ec1ed2b40) 
 ![AjoutUtil](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/938c7683-9c1a-43b9-bf48-05a72c0ea543)
-![SuppAcc](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/04ea40e2-bed9-41a5-8007-b7f18fa5bb6b)
+![SuppAcc](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/7b15c85b-83a4-4c01-ac61-4a39f7013280)
+
 ![SuppBor](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/fb010a2b-06d4-483e-bb8c-f4eaef03d597)
 ![SuppMand](https://github.com/Aym2016/gestion-des-accidents-de-travail-J2EE-Hibernate-jsf-xhtml-/assets/42209140/4302ea1c-48c9-48ae-8e1a-f27a0071acd4)
 
